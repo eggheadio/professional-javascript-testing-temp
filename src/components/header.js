@@ -4,9 +4,9 @@ import {css} from 'emotion'
 
 const Header = ({ siteTitle }) => (
   <div className={css({
-    background: 'gray',
+    background: '#f8f8f8',
   })}>
-    <div className={css({
+    <section className={css({
       width: '100%',
       padding: '1rem 0',
     })}>
@@ -21,6 +21,9 @@ const Header = ({ siteTitle }) => (
         })}>
           <Link
             to="/"
+            className={css({
+              textDecoration: 'none',
+            })}
           >
             Professional Javascript Testing
             <br />
@@ -35,7 +38,7 @@ const Header = ({ siteTitle }) => (
           </div>
         </div>
       </div>
-    </div>
+    </section>
   </div>
 )
 
