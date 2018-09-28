@@ -6,6 +6,7 @@
   "dependencies": {
     "@mdx-js/mdx": "^0.15.4",
     "@mdx-js/tag": "^0.15.0",
+    "babel-plugin-emotion": "^9.2.10",
     "emotion": "^9.2.10",
     "emotion-server": "^9.2.10",
     "gatsby": "^2.0.0",
