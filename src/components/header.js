@@ -1,31 +1,40 @@
 import React from 'react'
 import { Link } from 'gatsby'
+import {css} from 'emotion'
 
 const Header = ({ siteTitle }) => (
-  <div
-    style={{
-      background: 'rebeccapurple',
-      marginBottom: '1.45rem',
-    }}
-  >
-    <div
-      style={{
+  <div className={css({
+    background: 'gray',
+  })}>
+    <div className={css({
+      width: '100%',
+      padding: '1rem 0',
+    })}>
+      <div className={css({
         margin: '0 auto',
         maxWidth: 960,
-        padding: '1.45rem 1.0875rem',
-      }}
-    >
-      <h1 style={{ margin: 0 }}>
-        <Link
-          to="/"
-          style={{
-            color: 'white',
-            textDecoration: 'none',
-          }}
-        >
-          {siteTitle}
-        </Link>
-      </h1>
+        padding: '0 1rem',
+      })}>
+        <div className={css({
+          width: '100%',
+          display: 'flex',
+        })}>
+          <Link
+            to="/"
+          >
+            Professional Javascript Testing
+            <br />
+            <i>with Kent C. Dodds</i>
+          </Link>
+          <div className={css({
+            flexGrow: 1,
+            display: 'flex',
+            justifyContent: 'flex-end',
+          })}>
+            nav links
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 )
