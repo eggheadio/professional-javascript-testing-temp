@@ -5,6 +5,12 @@ import Layout from '../components/Layout'
 
 import Hero from '../components/Hero'
 
+import Auth from '../utils/auth'
+
+import { UserContext } from '../context/userContext'
+
+const auth = new Auth()
+
 injectGlobal`
   * {
     margin: 0;
@@ -33,10 +39,28 @@ injectGlobal`
   }
 `
 
-const IndexPage = () => (
-  <Layout>
-    <Hero />
-  </Layout>
-)
+class IndexPage extends React.Component {
+  state = {
+    user: {},
+    authenticated: false
+  }
+
+  componentDidMount() {
+    this.setState({
+      user: auth.getUser(),
+      authenticated: auth.isAuthenticated()
+    })
+  }
+
+  render() {
+    return (
+      <UserContext.Provider value={this.state}>
+        <Layout>
+          <Hero />
+        </Layout>
+      </UserContext.Provider>
+    )
+  }
+}
 
 export default IndexPage
