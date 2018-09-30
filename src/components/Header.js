@@ -1,8 +1,10 @@
 import React from 'react'
 import { Link } from 'gatsby'
 import { css } from 'emotion'
+
 import Auth from '../utils/auth'
 import { UserContext } from '../context/userContext'
+import { Container } from './markupHelpers'
 
 const auth = new Auth()
 
@@ -17,13 +19,7 @@ const Header = ({ siteTitle }) => (
               padding: '2rem 0'
             })}
           >
-            <div
-              className={css({
-                margin: '0 auto',
-                maxWidth: 960,
-                padding: '0 1rem'
-              })}
-            >
+            <Container>
               <div
                 className={css({
                   width: '100%',
@@ -61,7 +57,7 @@ const Header = ({ siteTitle }) => (
                   )}
                 </div>
               </div>
-            </div>
+            </Container>
           </section>
       )
     }}

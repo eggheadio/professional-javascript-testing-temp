@@ -2,6 +2,7 @@ import React from 'react'
 import { css } from 'emotion'
 
 import { UserContext } from '../../context/userContext'
+import { Container } from '../markupHelpers'
 
 const Hero = () => {
   return (
@@ -14,15 +15,9 @@ const Hero = () => {
             padding: '2rem 0'
           })}
         >
-          <div
-            className={css({
-              margin: '0 auto',
-              maxWidth: 960,
-              padding: '0 1rem'
-            })}
-          >
+          <Container>
             Hero {user && user.name}
-          </div>
+          </Container>
         </section>
       )}
     </UserContext.Consumer>
