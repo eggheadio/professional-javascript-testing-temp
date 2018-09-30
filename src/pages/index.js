@@ -1,8 +1,9 @@
 import React from 'react'
-import { injectGlobal } from 'emotion'
+import { css, injectGlobal } from 'emotion'
 
 import Layout from '../components/Layout'
 
+import { Container } from '../components/markupHelpers'
 import Hero from '../components/Hero'
 
 import Auth from '../utils/auth'
@@ -17,9 +18,6 @@ injectGlobal`
     padding: 0;
     box-sizing: border-box;
   }
-`
-
-injectGlobal`
   html, body {
     font-family: -apple-system,
       BlinkMacSystemFont,
@@ -57,6 +55,15 @@ class IndexPage extends React.Component {
       <UserContext.Provider value={this.state}>
         <Layout>
           <Hero />
+          <section
+            className={css({
+              width: '100%',
+              background: '#ffffff',
+              padding: '4rem 0'
+            })}
+          >
+            <Container>123</Container>
+          </section>
         </Layout>
       </UserContext.Provider>
     )
