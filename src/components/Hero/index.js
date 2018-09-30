@@ -16,7 +16,36 @@ const Hero = () => {
           })}
         >
           <Container>
-            Hero {user && user.name}
+            <div className={css({
+              display: 'flex'
+            })}>
+              <div className={css({
+                width: '60%',
+                paddingRight: '40px'
+              })}>
+                <h2 className={css({
+                  fontSize: '32px',
+                  lineHeight: 1.25,
+                  fontWeight: 500,
+                  color: 'black',
+                })}>
+                  Learn the smart, efficient way to test any JavaScript application. 
+                </h2>
+              </div>
+              <div className={css({
+                width: '40%'
+              })}>
+                <img
+                  src="https://via.placeholder.com/350x250?text=ololo+alala"
+                  alt="alt"
+                  title="title"
+                  className={css({
+                    display: 'block',
+                    width: '100%'
+                  })}
+                />
+              </div>
+            </div>
           </Container>
         </section>
       )}
