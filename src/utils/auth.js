@@ -37,11 +37,10 @@ export default class Auth {
     if (typeof window !== 'undefined') {
       this.eggheadAuth.token.getToken(location).then(user => {
         this.setSession(user).then(() => {
-          // window.onunload = () => {
-          //   window.opener.location.reload()
-          // }
-          // window.close()
-          window.opener.location.reload()
+          window.onunload = () => {
+            window.opener.location.reload()
+          }
+          window.close()
         })
       })
     }
