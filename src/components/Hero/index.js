@@ -11,7 +11,7 @@ const Hero = () => {
           className={css({
             width: '100%',
             background: '#f8f8f8',
-            padding: '1rem 0'
+            padding: '2rem 0'
           })}
         >
           <div
