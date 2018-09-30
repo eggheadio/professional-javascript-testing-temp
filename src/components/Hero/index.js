@@ -27,10 +27,17 @@ const Hero = () => {
                   fontSize: '32px',
                   lineHeight: 1.25,
                   fontWeight: 500,
-                  color: 'black',
+                  color: 'black'
                 })}>
                   Learn the smart, efficient way to test any JavaScript application. 
                 </h2>
+                <p className={css({
+                  fontSize: '20px',
+                  lineHeight: 1.25,
+                  color: '#2e2e36'
+                })}>
+                  Kent C. Dodds shares a professional method for testing any JavaScript application—whether you’re using React, Angular, Vue, or plain old JavaScript. Learn to ship it right every time with a proven approach that makes you a more savvy, efficient, dependable developer by Monday.
+                </p>
               </div>
               <div className={css({
                 width: '40%'
