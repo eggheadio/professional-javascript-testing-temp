@@ -11,10 +11,25 @@ const LessonsPage = ({ data }) => (
           className={css`
             display: flex;
             align-items: center;
+            padding: 40px;
+            height: 104px;
           `}
         >
-          <img src={node.image_64_url} alt="a logo for this lesson" />{' '}
-          {node.title} by {node.instructor.full_name}
+          <img
+            className={css`
+              height: 64px;
+              width: 64px;
+            `}
+            src={node.image_64_url}
+            alt="a logo for this lesson"
+          />{' '}
+          <div
+            className={css`
+              padding-left: 15px;
+            `}
+          >
+            {node.title} by {node.instructor.full_name}
+          </div>
         </div>
       )
     })}
