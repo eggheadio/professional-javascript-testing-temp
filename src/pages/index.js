@@ -2,6 +2,8 @@ import React from 'react'
 import { css, injectGlobal } from 'emotion'
 import { graphql } from 'gatsby'
 import { get } from 'lodash'
+import {Formik, Field, Form} from 'formik'
+import * as yup from 'yup'
 
 import Layout from '../components/Layout'
 
@@ -39,6 +41,9 @@ injectGlobal`
       "Segoe UI Symbol";
   }
 `
+const announcementSchema = yup.object().shape({
+  email: yup.string().email()
+})
 
 class IndexPage extends React.Component {
   state = {
@@ -54,6 +59,7 @@ class IndexPage extends React.Component {
       authenticated: auth.isAuthenticated()
     })
   }
+
 
   render() {
     // const packages = this.props.data.allBundle.edges
@@ -285,6 +291,105 @@ class IndexPage extends React.Component {
                   </div>
                 </div>
               </div>
+            </Container>
+            <Container maxWidth={768}>
+              <Formik
+                initialValues={{email: ''}}
+                validationSchema={announcementSchema}
+                onSubmit={(props) => {
+                  console.log(props)
+                  // setTimeout(() => {
+                  //   alert(JSON.stringify(values, null, 2));
+                  //   actions.setSubmitting(false);
+                  // }, 1000);
+                }}
+                render={({handleSubmit, handleChange, handleBlur, values, errors}) => {
+                  return(
+                    <Form className={css`
+                      margin-top: 2rem;
+                      display: flex;
+                      flex-direction: column;
+                    `}>
+                      <h3 className={css`
+                        height: 30px;
+                        width: 690px;
+                        opacity: 0.9;
+                        color: #2E2E36;
+                        font-size: 20px;
+                        font-weight: 600;
+                        line-height: 30px;
+                      `}>
+                        Get notified with the latest updates
+                      </h3>
+                      <div className={css`
+                        display: flex;
+                        flex-direction: row;
+                        align-items: center;
+                        margin-top: 1rem;
+                        margin-bottom: 1rem;
+                      `}>
+                        <Field type="email" name="email" placeholder="enter e-mail"
+                          className={css`
+                          border: 0;
+                          background: #F4F6F8;
+                          width: 300px;
+                          height: 60px;
+                          display: flex;
+                          flex-direction: column;
+                          justify-content: center;
+                          align-items: left;
+                          padding: 0 16px;
+                          font-size: 1rem;
+                          border-radius: 5px 0 0 5px;
+                          transition: all 600ms cubic-bezier(0.075, 0.82, 0.165, 1);
+                          &:focus {
+                            outline: transparent;
+                            filter: contrast(0.95);
+                            color: black;
+                            transition: all 600ms cubic-bezier(0.075, 0.82, 0.165, 1);
+                          }
+                          &::placeholder {
+                            font-size: 1rem;
+                            font-weight: 300;
+                            opacity: 0.7;
+                          }
+                        `}
+                        />
+                        <button type="submit" className={css`
+                          height: 60px;
+                          display: inline-flex;
+                          flex-direction: row;
+                          align-items: center;
+                          justify-content: center;
+                          font-size: 1rem;
+                          cursor: pointer;
+                          border: none;
+                          border-radius: 0 5px 5px 0;
+                          padding: 1rem 1rem;
+                          width: 130px;
+                          margin: 0;
+                          text-decoration: none;
+                          background: black;
+                          color: white;
+                          span {
+                            transition: all 250ms ease;
+                          }
+                          &:hover, &:focus {
+                            outline: transparent;
+                            filter: contrast(1.2);
+                            span {
+                              transition: all 250ms ease;
+                              transform: scale(1.08);
+                            }
+                          }`}>
+                          Get Notified
+                        </button>
+                      </div>
+                      <p>No spam. lorem ipsum dolor sit amet.</p>
+                    </Form>
+                  )
+                }}
+              />
             </Container>
           </section>
         </Layout>
