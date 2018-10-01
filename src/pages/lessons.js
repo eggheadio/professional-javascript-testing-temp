@@ -28,7 +28,7 @@ class LessonsPage extends React.Component {
                           height: 64px;
                           width: 64px;
                         `}
-                        src={course.image_64_url}
+                        src={course.square_cover_64_url}
                         alt="a logo for this lesson"
                       />{' '}
                       <div
@@ -59,6 +59,7 @@ export const query = graphql`
           courses {
             title
             description
+            square_cover_64_url
           }
         }
       }
