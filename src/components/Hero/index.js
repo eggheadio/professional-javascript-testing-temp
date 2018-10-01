@@ -8,7 +8,7 @@ const Hero = () => {
   return (
     <UserContext.Consumer>
       {({ user }) => (
-        <section
+        <header
           className={css({
             width: '100%',
             background: '#f8f8f8',
@@ -69,7 +69,7 @@ const Hero = () => {
               </div>
             </div>
           </Container>
-        </section>
+        </header>
       )}
     </UserContext.Consumer>
   )

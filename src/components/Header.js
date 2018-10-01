@@ -12,7 +12,7 @@ const Header = ({ siteTitle }) => (
   <UserContext.Consumer>
     {({ authenticated }) => {
       return (
-        <section
+        <nav
             className={css({
               background: '#f8f8f8',
               width: '100%',
@@ -58,7 +58,7 @@ const Header = ({ siteTitle }) => (
                 </div>
               </div>
             </Container>
-          </section>
+          </nav>
       )
     }}
   </UserContext.Consumer>
