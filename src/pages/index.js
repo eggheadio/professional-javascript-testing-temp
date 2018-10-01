@@ -1,10 +1,13 @@
 import React from 'react'
 import { css, injectGlobal } from 'emotion'
+import { graphql } from 'gatsby'
+import { get } from 'lodash'
 
 import Layout from '../components/Layout'
 
 import { Container } from '../components/markupHelpers'
 import Hero from '../components/Hero'
+import Package from '../components/Package'
 
 import Auth from '../utils/auth'
 
@@ -39,8 +42,10 @@ injectGlobal`
 
 class IndexPage extends React.Component {
   state = {
-    user: {},
-    authenticated: false
+    user: {
+      email: "test@egghead.io"
+    },
+    authenticated: true
   }
 
   componentDidMount() {
@@ -51,6 +56,8 @@ class IndexPage extends React.Component {
   }
 
   render() {
+    const packages = this.props.data.allBundle.edges
+
     return (
       <UserContext.Provider value={this.state}>
         <Layout>
@@ -62,7 +69,36 @@ class IndexPage extends React.Component {
               padding: '4rem 0'
             })}
           >
-            <Container>123</Container>
+            <Container>
+              <UserContext.Consumer>
+                {({user}) => {
+                  return(
+                    <div className={css({padding: 20, background: 'aliceblue', display: 'flex'})}>
+                      {packages.map((edge, index) => {
+                        const pkg = edge.node
+
+                        return (
+                          <div className={css({padding: 10})} key={`package-${index}`}>
+                            <Package
+                              name={pkg.title}
+                              amount={9900}
+                              description={pkg.description}
+                              features={pkg.courses.map(course => course.title)}
+                              email={get(user, 'email')}
+                              url={pkg.purchaseURL}
+                              sellableType={pkg.sellableType}
+                              sellableID={pkg.sellableID}
+                              onSuccess={() => alert('successful purchase')}
+                              onError={() => alert('something bad happened')}
+                             />
+                          </div>
+                        )
+                      })}
+                    </div>
+                  )
+                }}
+              </UserContext.Consumer>
+            </Container>
           </main>
         </Layout>
       </UserContext.Provider>
@@ -70,4 +106,22 @@ class IndexPage extends React.Component {
   }
 }
 
+export const query = graphql`
+  query IndexPageQuery {
+    allBundle {
+      edges {
+        node {
+          title,
+          description,
+          courses {
+            title,
+          }
+          sellableType,
+          sellableID,
+          purchaseURL
+        }
+      }
+    }
+  }
+`
 export default IndexPage
