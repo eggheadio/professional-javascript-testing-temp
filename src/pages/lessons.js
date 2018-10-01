@@ -11,7 +11,7 @@ class LessonsPage extends React.Component {
         {data.allBundle.edges.map(({ node }) => {
           return (
             <div key={node.title}>
-              {node.title}
+              <h1>{node.title}</h1>
               <ul>
                 {node.courses.map(course => {
                   return (
