@@ -67,7 +67,7 @@ class Package extends React.Component {
         }
         {!isEmpty(features) &&
           <ul>
-            {features.map((feature, index) => <li key={index}>{feature.title}</li>)}
+            {features.map((feature, index) => <li key={`feature-${index}`}>{feature}</li>)}
           </ul>
         }
       </div>

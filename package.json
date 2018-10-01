@@ -36,25 +36,14 @@
     "prop-types": "^15.6.2",
     "react": "^16.5.2",
     "react-dom": "^16.5.2",
+    "react-emotion": "^9.2.12",
     "react-helmet": "~5.2.0",
     "react-stripe-checkout": "^2.6.3",
     "serve": "^10.0.2",
     "styled-components": "^3.4.9"
   },
   "devDependencies": {
-    "prettier": "1.14.3",
-    "gatsby-remark-images": "^2.0.3",
-    "gatsby-remark-prismjs": "^3.0.1",
-    "gatsby-source-graphql": "^2.0.3",
-    "gatsby-transformer-remark": "^2.1.4",
-    "gatsby-transformer-sharp": "^2.1.2",
-    "prismjs": "^1.15.0",
-    "query-string": "^6.1.0",
-    "react": "^16.5.1",
-    "react-dom": "^16.5.1",
-    "react-emotion": "^9.2.10",
-    "react-helmet": "^5.2.0",
-    "serve": "^10.0.2"
+    "prettier": "^1.14.2"
   },
   "keywords": [
     "gatsby"
@@ -67,9 +56,6 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "serve public/",
     "deploy": "now && now alias"
-  },
-  "devDependencies": {
-    "prettier": "^1.14.2"
   },
   "repository": {
     "type": "git",
