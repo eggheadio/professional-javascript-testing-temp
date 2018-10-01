@@ -32,7 +32,8 @@ const Hero = () => {
                     fontSize: '32px',
                     lineHeight: 1.25,
                     fontWeight: 500,
-                    color: 'black'
+                    color: 'black',
+                    marginBottom: '20px'
                   })}
                 >
                   Learn the smart, efficient way to test any JavaScript
