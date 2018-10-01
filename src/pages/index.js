@@ -43,7 +43,7 @@ injectGlobal`
 class IndexPage extends React.Component {
   state = {
     user: {
-      email: "test@egghead.io"
+      email: 'test@egghead.io'
     },
     authenticated: true
   }
@@ -56,7 +56,7 @@ class IndexPage extends React.Component {
   }
 
   render() {
-    const packages = this.props.data.allBundle.edges
+    // const packages = this.props.data.allBundle.edges
 
     return (
       <UserContext.Provider value={this.state}>
@@ -71,14 +71,23 @@ class IndexPage extends React.Component {
           >
             <Container>
               <UserContext.Consumer>
-                {({user}) => {
-                  return(
-                    <div className={css({padding: 20, background: 'aliceblue', display: 'flex'})}>
-                      {packages.map((edge, index) => {
+                {({ user }) => {
+                  return (
+                    <div
+                      className={css({
+                        padding: 20,
+                        background: 'aliceblue',
+                        display: 'flex'
+                      })}
+                    >
+                      {/* {packages.map((edge, index) => {
                         const pkg = edge.node
 
                         return (
-                          <div className={css({padding: 10})} key={`package-${index}`}>
+                          <div
+                            className={css({ padding: 10 })}
+                            key={`package-${index}`}
+                          >
                             <Package
                               name={pkg.title}
                               amount={9900}
@@ -90,10 +99,10 @@ class IndexPage extends React.Component {
                               sellableID={pkg.sellableID}
                               onSuccess={() => alert('successful purchase')}
                               onError={() => alert('something bad happened')}
-                             />
+                            />
                           </div>
                         )
-                      })}
+                      })} */}
                     </div>
                   )
                 }}
@@ -187,8 +196,8 @@ class IndexPage extends React.Component {
                               fontSize: '22px',
                               lineHeight: 1,
                               color: 'black',
-                              'span': {
-                                verticalAlign: 'middle',
+                              span: {
+                                verticalAlign: 'middle'
                               }
                             })}
                           >
@@ -225,11 +234,13 @@ class IndexPage extends React.Component {
                               .00
                             </span>
                           </div>
-                          <div className={css({
-                            fontSize: '16px',
-                            color: 'rgba(0, 0, 0, 0.6)',
-                            marginTop: '16px',
-                          })}>
+                          <div
+                            className={css({
+                              fontSize: '16px',
+                              color: 'rgba(0, 0, 0, 0.6)',
+                              marginTop: '16px'
+                            })}
+                          >
                             Lorem ipsum dolor sit amet.
                           </div>
                         </div>
@@ -240,16 +251,18 @@ class IndexPage extends React.Component {
                             justifyContent: 'center'
                           })}
                         >
-                          <ul className={css({
-                            listStyle: 'none',
-                          })}>
-                            <li className={css({
-                              ':before': {
-                                content: '"\\2714"',
-                              },
-                            })}>
-
-                            </li>
+                          <ul
+                            className={css({
+                              listStyle: 'none'
+                            })}
+                          >
+                            <li
+                              className={css({
+                                ':before': {
+                                  content: '"\\2714"'
+                                }
+                              })}
+                            />
                           </ul>
                         </div>
                       </div>
@@ -280,22 +293,22 @@ class IndexPage extends React.Component {
   }
 }
 
-export const query = graphql`
-  query IndexPageQuery {
-    allBundle {
-      edges {
-        node {
-          title,
-          description,
-          courses {
-            title,
-          }
-          sellableType,
-          sellableID,
-          purchaseURL
-        }
-      }
-    }
-  }
-`
+// export const query = graphql`
+//   query IndexPageQuery {
+//     allBundle {
+//       edges {
+//         node {
+//           title,
+//           description,
+//           courses {
+//             title,
+//           }
+//           sellableType,
+//           sellableID,
+//           purchaseURL
+//         }
+//       }
+//     }
+//   }
+// `
 export default IndexPage
