@@ -62,14 +62,13 @@ class IndexPage extends React.Component {
       <UserContext.Provider value={this.state}>
         <Layout>
           <Hero />
-          <section
+          <main
             className={css({
               width: '100%',
               background: '#ffffff',
               padding: '4rem 0'
             })}
           >
-
             <Container>
               <UserContext.Consumer>
                 {({user}) => {
@@ -100,7 +99,7 @@ class IndexPage extends React.Component {
                 }}
               </UserContext.Consumer>
             </Container>
-          </section>
+          </main>
         </Layout>
       </UserContext.Provider>
     )
