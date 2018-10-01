@@ -26,6 +26,7 @@
     "gatsby-plugin-sharp": "^2.0.5",
     "gatsby-remark-images": "^2.0.3",
     "gatsby-remark-prismjs": "^3.0.1",
+    "gatsby-source-graphql": "^2.0.3",
     "gatsby-transformer-remark": "^2.1.4",
     "gatsby-transformer-sharp": "^2.1.2",
     "prismjs": "^1.15.0",
