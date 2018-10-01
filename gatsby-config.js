@@ -1,20 +1,23 @@
+require('dotenv').config({
+  path: `.env.${process.env.NODE_ENV}`
+})
+
 module.exports = {
-  pathPrefix: '/',
   siteMetadata: {
     siteUrl: 'https://professionaljavascripttesting.com/',
     author: 'egghead.io',
     title: 'Professional JavaScript Testing with Kent C. Dodds',
     description:
       'This course will teach you the fundamentals of testing your JavaScript applications using eslint, Flow, Jest, and Cypress.',
-    keywords: ['javascript', 'testing', 'jest', 'cypress'],
+    keywords: ['javascript', 'testing', 'jest', 'cypress']
   },
   plugins: [
+    'gatsby-plugin-react-helmet',
+    'gatsby-plugin-emotion',
+    'gatsby-plugin-react-helmet',
     {
-      resolve: 'gatsby-source-filesystem',
-      options: {
-        path: `${__dirname}/content/blog`,
-        name: 'blog',
-      },
+      resolve: 'gatsby-source-egghead',
+      options: {}
     },
     {
       resolve: `gatsby-mdx`,
@@ -25,37 +28,32 @@ module.exports = {
             resolve: 'gatsby-remark-images',
             options: {
               maxWidth: 1035,
-              sizeByPixelDensity: true,
-            },
+              sizeByPixelDensity: true
+            }
           },
           {
             resolve: `gatsby-remark-prismjs`,
             options: {
               classPrefix: 'language-',
               inlineCodeMarker: null,
-              aliases: {},
-            },
-          },
-        ],
-      },
+              aliases: {}
+            }
+          }
+        ]
+      }
     },
-    'gatsby-plugin-sharp',
-    'gatsby-transformer-sharp',
-    'gatsby-plugin-styled-components',
-    'gatsby-plugin-catch-links',
-    'gatsby-plugin-react-helmet',
     {
-      resolve: 'gatsby-plugin-manifest',
+      resolve: `gatsby-plugin-manifest`,
       options: {
-        name: 'A learning, teaching and writing software engineer',
-        short_name: 'RWieruch',
+        name: 'gatsby-starter-default',
+        short_name: 'starter',
         start_url: '/',
-        background_color: '#fff',
-        theme_color: '#525dce',
-        display: 'standalone',
-        icon: 'assets/logo.png',
-      },
+        background_color: '#663399',
+        theme_color: '#663399',
+        display: 'minimal-ui',
+        icon: 'src/images/gatsby-icon.png' // This path is relative to the root of the site.
+      }
     },
-    'gatsby-plugin-offline',
-  ],
-};
+    'gatsby-plugin-offline'
+  ]
+}
