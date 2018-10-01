@@ -35,13 +35,21 @@ const proContent = [
 ]
 
 exports.basicBundle = {
-  title: 'beginner',
+  title: 'Beginner',
+  description: 'This is a beginner course full of interesting testing stuff',
   content: basicContent,
-  duration: 135
+  duration: 135,
+  sellableType: 'playlist',
+  sellableID: '1',
+  purchaseURL: 'http://egghead.af:5000/api/v1/sellable_purchases'
 }
 
 exports.proBundle = {
-  title: 'professionsal',
+  title: 'Professional',
+  description: 'This is some professional content',
   content: [...basicContent, ...proContent],
-  duration: 685
+  duration: 685,
+  sellableType: 'playlist',
+  sellableID: '2',
+  purchaseURL: 'http://egghead.af:5000/api/v1/sellable_purchases'
 }
