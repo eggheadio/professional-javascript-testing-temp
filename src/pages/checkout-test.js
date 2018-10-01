@@ -22,6 +22,11 @@ export default function CheckoutTest({ data: { site } }) {
         description="a bundle of good things for you to learn"
         features={features}
         email={"raquel@egghead.io"}
+        url={"http://egghead.af:5000/"}
+        sellableType={"Course"}
+        sellableID={"1"}
+        onSuccess={() => (window.location = "http://localhost:8000")}
+        onError={() => alert('something bad happened')}
        />
     </Layout>
   )
