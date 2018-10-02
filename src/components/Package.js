@@ -117,22 +117,34 @@ class Package extends React.Component {
               {formattedAmount.slice(1, -3)}
             </span>
           </div>
-          <Checkout
-            name={name}
-            description={description}
-            amount={amount}
-            email={email}
-            onToken={this.onToken}
-            onOpened={onOpened}
-            onClosed={onClosed}
-            image={image}
-          />
+          <div className={css({
+            width: '100%',
+            display: 'flex',
+            flexDirection: 'column',
+            alignItems: 'stretch',
+            marginTop: '35px',
+          })}>
+            <Checkout
+              name={name}
+              description={description}
+              amount={amount}
+              email={email}
+              onToken={this.onToken}
+              onOpened={onOpened}
+              onClosed={onClosed}
+              image={image}
+            />
+          </div>
           { description && (
             <div
               className={css({
+                width: '100%',
+                padding: '0 20px',
                 fontSize: '16px',
+                lineHeight: 1.25,
                 color: 'rgba(0, 0, 0, 0.6)',
-                marginTop: '16px'
+                marginTop: '25px',
+                textAlign: 'center',
               })}
             >
               {description}
