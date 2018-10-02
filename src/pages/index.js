@@ -56,8 +56,12 @@ class IndexPage extends React.Component {
   }
 
   render() {
+<<<<<<< HEAD
     console.log('props: ', this.props)
     // const packages = this.props.data.allBundle.edges
+=======
+    const packages = this.props.data.allBundle.edges
+>>>>>>> 5bd49d70d4ae7426d23ac7df3abbeb00aece8a2e
 
     return (
       <UserContext.Provider value={this.state}>
@@ -81,7 +85,7 @@ class IndexPage extends React.Component {
                         display: 'flex'
                       })}
                     >
-                      {/* {packages.map((edge, index) => {
+                      {packages.map((edge, index) => {
                         const pkg = edge.node
 
                         return (
@@ -103,7 +107,7 @@ class IndexPage extends React.Component {
                             />
                           </div>
                         )
-                      })} */}
+                      })}
                     </div>
                   )
                 }}
@@ -244,25 +248,6 @@ class IndexPage extends React.Component {
                           >
                             Lorem ipsum dolor sit amet.
                           </div>
-                          <button
-                            type='button'
-                            className={css({
-                              marginTop: '25px',
-                              fontSize: '15px',
-                              lineHeight: 1.25,
-                              color: 'white',
-                              background: 'black',
-                              borderRadius: 0,
-                              border: 'none',
-                              height: '50px',
-                              padding: '10px 20px',
-                              display: 'inline-flex',
-                              alignItems: 'center',
-                              cursor: 'pointer',
-                            })}
-                          >
-                            START TESTING LIKE A PRO
-                          </button>
                         </div>
                         <div
                           className={css({
@@ -278,47 +263,28 @@ class IndexPage extends React.Component {
                           >
                             <li
                               className={css({
-                                display: 'flex',
-                                width: '100%',
                                 ':before': {
-                                  content: '"\\2714"',
-                                  display: 'flex',
-                                  justifyContent: 'center',
-                                  alignItems: 'center',
-                                  fontSize: '6px',
-                                  width: '20px',
-                                  height: '20px',
-                                  borderRadius: '50%',
-                                  background: '#f2f2f2',
-                                  marginRight: '10px'
+                                  content: '"\\2714"'
                                 }
                               })}
-                            >
-                              Lorem ipsum dolor sit amet.
-                            </li>
-                            <li
-                              className={css({
-                                marginTop: '20px',
-                                display: 'flex',
-                                width: '100%',
-                                ':before': {
-                                  content: '"\\2714"',
-                                  display: 'flex',
-                                  justifyContent: 'center',
-                                  alignItems: 'center',
-                                  fontSize: '6px',
-                                  width: '20px',
-                                  height: '20px',
-                                  borderRadius: '50%',
-                                  background: '#f2f2f2',
-                                  marginRight: '10px'
-                                }
-                              })}
-                            >
-                              Lorem ipsum dolor sit amet.
-                            </li>
+                            />
                           </ul>
                         </div>
+                      </div>
+                    </div>
+                    <div
+                      className={css({
+                        width: '50%',
+                        flexShrink: 0,
+                        paddingLeft: '20px'
+                      })}
+                    >
+                      <div
+                        className={css({
+                          border: '1px solid #e4e4e4'
+                        })}
+                      >
+                        123
                       </div>
                     </div>
                   </div>
@@ -332,22 +298,22 @@ class IndexPage extends React.Component {
   }
 }
 
-// export const query = graphql`
-//   query IndexPageQuery {
-//     allBundle {
-//       edges {
-//         node {
-//           title,
-//           description,
-//           courses {
-//             title,
-//           }
-//           sellableType,
-//           sellableID,
-//           purchaseURL
-//         }
-//       }
-//     }
-//   }
-// `
+export const query = graphql`
+  query IndexPageQuery {
+    allBundle {
+      edges {
+        node {
+          title
+          description
+          courses {
+            title
+          }
+          sellableType
+          sellableID
+          purchaseURL
+        }
+      }
+    }
+  }
+`
 export default IndexPage
