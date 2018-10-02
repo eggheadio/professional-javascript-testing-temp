@@ -60,7 +60,7 @@ class IndexPage extends React.Component {
 
     return (
       <UserContext.Provider value={this.state}>
-        <Layout>
+        <Layout darkHeader>
           <Hero />
           <main
             className={css({

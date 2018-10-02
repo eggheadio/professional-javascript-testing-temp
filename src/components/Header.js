@@ -8,13 +8,13 @@ import { Container } from './markupHelpers'
 
 const auth = new Auth()
 
-const Header = ({ siteTitle }) => (
+const Header = ({ siteTitle, darkHeader }) => (
   <UserContext.Consumer>
     {({ authenticated }) => {
       return (
         <nav
             className={css({
-              background: '#f8f8f8',
+              background: darkHeader ? '#32323b' : 'none',
               width: '100%',
               padding: '2rem 0'
             })}
