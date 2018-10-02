@@ -18,7 +18,7 @@ $ yarn install
 
 ```bash
 $ cd plugins/gatsby-source-egghead
-$ npm install
+$ yarn install
 ```
 
 4. Run your development server
