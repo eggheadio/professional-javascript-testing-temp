@@ -1,4 +1,3 @@
-//TODO: use common variables and not ANOTHER list of vars for this
 const colorValues = {
   black: '#000',
   white: '#fff',
