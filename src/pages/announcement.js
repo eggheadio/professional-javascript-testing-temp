@@ -13,21 +13,21 @@ class Announcement extends React.Component {
     return(
       <div className={css({
         backgroundColor: '#32323B',
-        height: '100vh',
+        minHeight: '100vh',
+        width: '100vw',
         display: 'flex',
+        padding: '50px 0',
         alignItems: 'center',
       })}>
         <Container maxWidth={600}>
           <div>
             <h1 className={css({
               color: "#FFFFFF",
-              height: "15px",
               fontSize: "17px",
               fontWeight: "600",
               lineHeight: "15px"
             })}>JAVASCRIPT TESTING</h1>
             <p className={css({
-              height: "13px",
               color: "#FFD473",
               fontSize: "13px",
               lineHeight: "15px"
@@ -35,8 +35,6 @@ class Announcement extends React.Component {
           </div>
           <h2 className={css({
             marginTop: '55px',
-            height: '80px',
-            
             color: '#FFFFFF',
             fontSize: '40px',
             fontWeight: '500',
@@ -98,8 +96,8 @@ class Announcement extends React.Component {
                   flexDirection: 'column',
                 })}>
                   <h3 className={css({
-                    height: '30px',
-                    width: '570px',
+                    marginTop: '35px',
+                    maxWidth: '570px',
                     color: '#FFFFFF',
                     fontSize: '18px',
                     fontWeight: '500',
@@ -112,6 +110,8 @@ class Announcement extends React.Component {
                     flexDirection: 'row',
                     alignItems: 'center',
                     marginTop: '1rem',
+                    maxWidth: '450px',
+                    width: '100%',
                     marginBottom: '0.5rem',})
                   }>
                     <Field type="email" name="email" placeholder="Enter your email"
@@ -119,7 +119,7 @@ class Announcement extends React.Component {
                       border: '0',
                       color: '#FFFFFF',
                       backgroundColor: '#4D4D56',
-                      width: '350px',
+                      width: '70%',
                       height: '60px',
                       display: 'flex',
                       flexDirection: 'column',
@@ -155,7 +155,7 @@ class Announcement extends React.Component {
                       border: 'none',
                       borderRadius: '0 5px 5px 0',
                       padding: '1rem 1rem',
-                      width: '130px',
+                      width: '30%',
                       margin: '0',
                       textDecoration: 'none',
                       backgroundColor: '#FFD473',
@@ -179,7 +179,6 @@ class Announcement extends React.Component {
                     </button>
                   </div>
                   <p className={css({
-                    width: '570px',
                     opacity: '0.6',
                     color: '#F2F2F2',
                     fontSize: '14px',
