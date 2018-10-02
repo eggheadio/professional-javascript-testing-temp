@@ -56,12 +56,7 @@ class IndexPage extends React.Component {
   }
 
   render() {
-<<<<<<< HEAD
-    console.log('props: ', this.props)
-    // const packages = this.props.data.allBundle.edges
-=======
     const packages = this.props.data.allBundle.edges
->>>>>>> 5bd49d70d4ae7426d23ac7df3abbeb00aece8a2e
 
     return (
       <UserContext.Provider value={this.state}>
