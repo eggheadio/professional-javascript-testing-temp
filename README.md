@@ -13,3 +13,5 @@ You will also need a `BUNDLE_BUDDY_TOKEN` in your `env.development`. This can be
 user = User.find_by_email('bundle.buddy+bot@egghead.io')
 user.access_tokens.create
 ```
+
+Also, remember to `rake staging:update_local_dev_database` to get all the content.
