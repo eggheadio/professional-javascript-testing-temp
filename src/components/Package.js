@@ -52,6 +52,7 @@ class Package extends React.Component {
     return (
       <div
         className={css({
+          width: '100%',
           border: '1px solid #e4e4e4',
           background: colorValues['white'],
           padding: '40px',
@@ -60,11 +61,10 @@ class Package extends React.Component {
       >
         <div
           className={css({
-            paddingBottom: '30px',
+            width: '100%',
             display: 'flex',
             flexDirection: 'column',
             alignItems: 'center',
-            borderBottom: '1px solid #e4e4e4'
           })}
         >
           <h4
@@ -138,6 +138,7 @@ class Package extends React.Component {
           { description && (
             <div
               className={css({
+                minHeight: '40px',
                 width: '100%',
                 padding: '0 20px',
                 fontSize: '16px',
@@ -153,9 +154,46 @@ class Package extends React.Component {
           )}
         </div>
         {!isEmpty(features) &&
-          <ul>
-            {features.map((feature, index) => <li key={`feature-${index}`}>{feature}</li>)}
-          </ul>
+          <div
+            className={css({
+              width: '100%',
+              padding: '35px 15px 0 15px',
+              marginTop: '35px',
+              display: 'flex',
+              justifyContent: 'center',
+              borderTop: '1px solid #e4e4e4'
+            })}
+          >
+            <ul
+              className={css({
+                listStyle: 'none',
+                fontFamily: 'TT Commons W01 Regular'
+              })}
+            >
+              {features.map((feature, index) => (
+                <li
+                  key={`feature-${index}`}
+                  className={css({
+                    color: '#2D2E49',
+                    fontSize: '18px',
+                    lineHeight: 1.25,
+                    display: 'flex',
+                    ':not(:first-child)': {
+                      marginTop: '10px',
+                    },
+                    ':before': {
+                      content: '"\\2714"',
+                      fontSize: '20px',
+                      color: '#8debeb',
+                      marginRight: '10px',
+                    }
+                  })}
+                >
+                  {feature}
+                </li>
+              ))}
+            </ul>
+          </div>
         }
 
 
@@ -165,81 +203,6 @@ class Package extends React.Component {
             border: '1px solid #e4e4e4'
           })}
         >
-
-          <div
-            className={css({
-              padding: '60px 20px',
-              display: 'flex',
-              flexDirection: 'column',
-              alignItems: 'center',
-              borderBottom: '1px solid #e4e4e4'
-            })}
-          >
-            <h4
-              className={css({
-                fontSize: '20px',
-                lineHeight: 1.25,
-                fontWeight: 400,
-                color: 'black'
-              })}
-            >
-              Plan 1
-            </h4>
-            <div
-              className={css({
-                marginTop: '24px',
-                display: 'inline-block',
-                fontSize: '22px',
-                lineHeight: 1,
-                color: 'black',
-                span: {
-                  verticalAlign: 'middle'
-                }
-              })}
-            >
-              <span
-                className={css({
-                  fontSize: '16px',
-                  color: 'rgba(0, 0, 0, 0.5)',
-                  textTransform: 'uppercase'
-                })}
-              >
-                us
-              </span>
-              <span
-                className={css({
-                  margin: '0 4px'
-                })}
-              >
-                $
-              </span>
-              <span
-                className={css({
-                  fontSize: '56px',
-                  fontWeight: 300
-                })}
-              >
-                149
-              </span>
-              <span
-                className={css({
-                  marginLeft: '4px',
-                  fontWeight: 300
-                })}
-              >
-                .00
-              </span>
-            </div>
-            <div
-              className={css({
-                fontSize: '16px',
-                color: 'rgba(0, 0, 0, 0.6)',
-                marginTop: '16px'
-              })}
-            >
-              Lorem ipsum dolor sit amet.
-            </div>
-          </div>
           <div
             className={css({
               padding: '60px 20px',
