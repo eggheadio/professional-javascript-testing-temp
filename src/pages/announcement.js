@@ -13,9 +13,11 @@ class Announcement extends React.Component {
     return(
       <div className={css({
         backgroundColor: '#32323B',
-        height: '100vh'
+        height: '100vh',
+        display: 'flex',
+        alignItems: 'center',
       })}>
-        <Container maxWidth={580}>
+        <Container maxWidth={600}>
           <div>
             <h1 className={css({
               color: "#FFFFFF",
@@ -34,46 +36,48 @@ class Announcement extends React.Component {
           <h2 className={css({
             marginTop: '55px',
             height: '80px',
-            width: '580px',
+            
             color: '#FFFFFF',
             fontSize: '40px',
-            fontWeight: '600',
+            fontWeight: '500',
             lineHeight: '40px',
           })}>
             Learn the smart, efficient way to test any JavaScript application.
           </h2>
           <h3 className={css({
             marginTop: '24px',
-            height: '50px',
-            width: '580px',
+            marginBottom: '40px',
             color: '#FFD473',
             fontSize: '22px',
-            lineHeight: '25px',
+            lineHeight: '28px',
+            fontWeight: 300,
           })}>
             What if you could ship 100% working code without slogging through the time-suck of manual testing?
           </h3>
           <div className={css({
             color: '#FFFFFF',
             fontSize: '18px',
-            lineHeight: '25px',
+            lineHeight: '28px',
+            fontWeight: 300,
+            opacity: '0.9',
           })}>
             <p className={css({
-              marginTop: '24px',
-              opacity: '0.9',
+              marginTop: '30px',
+              
             })}>
               Kent C. Dodds will share a professional method for testing any Javascript application -- whether you're using React, Angular, Vue, or plain old Javascript.
             </p>
             <p className={css({
               marginTop: '24px',
-              opacity: '0.9',
+              
+              
             })}>
               Learn to ship it right every time with a proven approach that makes you a more savvy, efficient, dependable developer by Monday.
             </p>
             <p className={css({
               marginTop: '22px',
-              opacity: '0.9',
             })}>
-              Be a professional. Be a winner.
+              Be a professional. Be a winner. 🏆
             </p>
           </div>
           <Formik
@@ -108,14 +112,14 @@ class Announcement extends React.Component {
                     flexDirection: 'row',
                     alignItems: 'center',
                     marginTop: '1rem',
-                    marginBottom: '1rem',})
+                    marginBottom: '0.5rem',})
                   }>
-                    <Field type="email" name="email" placeholder="enter e-mail"
+                    <Field type="email" name="email" placeholder="Enter your email"
                       className={css({
                       border: '0',
                       color: '#FFFFFF',
                       backgroundColor: '#4D4D56',
-                      width: '300px',
+                      width: '350px',
                       height: '60px',
                       display: 'flex',
                       flexDirection: 'column',
@@ -127,16 +131,16 @@ class Announcement extends React.Component {
                       transition: 'all 600ms cubic-bezier(0.075, 0.82, 0.165, 1)',
                       '&:focus': {
                         outline: 'transparent',
-                        filter: 'contrast(0.95)',
                         color: '#FFFFFF',
-                        fontWeight: '500',
+                        fontWeight: '300',
                         fontSize: '18px',
                         transition: 'all 600ms cubic-bezier(0.075, 0.82, 0.165, 1)',
                       },
                       '&::placeholder': {
                         fontSize: '1rem',
+                        color: '#fff',
                         fontWeight: '300',
-                        opacity: '0.7',
+                        opacity: '0.5',
                       }
                     })}
                     />
@@ -156,28 +160,31 @@ class Announcement extends React.Component {
                       textDecoration: 'none',
                       backgroundColor: '#FFD473',
                       color: 'black',
+                      transition: 'all 250ms ease',
+                      ':focus:not(:focus-visible)': { outline: 'none', },
+                      outline: 'none',
                       'span': {
                         transition: 'all 250ms ease',
                       },
-                      '&:hover': {
-                        outline: 'transparent',
-                        filter: 'contrast(1.2)',
+                      '&:hover, :focus': {
+                        transition: 'all 250ms ease',
+                        outline: 'none',
+                        filter: 'contrast(1.1)',
                         'span': {
                           transition: 'all 250ms ease',
                           transform: 'scale(1.08)',
                         },
                       },})}>
-                      Notify Me
+                      <span>Notify Me</span>
                     </button>
                   </div>
                   <p className={css({
-                    height: '30px',
                     width: '570px',
-                    opacity: '0.9',
+                    opacity: '0.6',
                     color: '#F2F2F2',
-                    fontSize: '16px',
+                    fontSize: '14px',
                     lineHeight: '30px',
-                  })}>No spam. Only bacon.</p>
+                  })}>No spam.</p>
                 </Form>
               )
             }}
