@@ -2,6 +2,8 @@ import React from 'react'
 import { css, injectGlobal } from 'emotion'
 import { graphql } from 'gatsby'
 import { get } from 'lodash'
+import {Formik, Field, Form} from 'formik'
+import * as yup from 'yup'
 
 import Layout from '../components/Layout'
 
@@ -41,6 +43,9 @@ injectGlobal`
       "Segoe UI Symbol";
   }
 `
+const announcementSchema = yup.object().shape({
+  email: yup.string().email()
+})
 
 class IndexPage extends React.Component {
   state = {
@@ -56,6 +61,7 @@ class IndexPage extends React.Component {
       authenticated: auth.isAuthenticated()
     })
   }
+
 
   render() {
     const packages = this.props.data.allBundle.edges
