@@ -145,6 +145,7 @@ class Package extends React.Component {
                 color: 'rgba(0, 0, 0, 0.6)',
                 marginTop: '25px',
                 textAlign: 'center',
+                fontFamily: 'TT Commons W01 Regular',
               })}
             >
               {description}
