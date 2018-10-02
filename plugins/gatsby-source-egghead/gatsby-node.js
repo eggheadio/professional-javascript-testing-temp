@@ -1,6 +1,7 @@
 const crypto = require('crypto')
 const fetch = require('node-fetch')
 const queryString = require('query-string')
+const assert = require('assert')
 
 const { basicBundle, proBundle } = require('../../data/bundles')
 
@@ -9,12 +10,24 @@ const buildBundleNode = async (bundleData, id) => {
     content => content.type === 'course'
   )
 
-  const courses = await Promise.map(courseContent, async course => {
-    const apiUrl = `https://egghead.io/api/v1/series/${course.slug}`
-    const response = await fetch(apiUrl)
+  assert(
+    process.env.BUNDLE_BUDDY_TOKEN !== undefined,
+    'You must have the BUNDLE_BUDDY_TOKEN env variable set!'
+  )
+
+  const getCourseData = async course => {
+    const apiUrl = `${process.env.AUTH_DOMAIN}/api/v1/series/${course.slug}`
+    const response = await fetch(apiUrl, {
+      headers: {
+        Authorization: `Bearer ${process.env.BUNDLE_BUDDY_TOKEN}`,
+        'Content-Type': 'application/json'
+      }
+    })
     const data = await response.json()
     return data
-  })
+  }
+
+  const courses = await Promise.map(courseContent, getCourseData)
 
   const bundleNode = {
     ...bundleData,

@@ -1,5 +1,6 @@
 {
   "env": {
+    "BUNDLE_BUDDY_TOKEN": "@bundle-buddy-token",
     "GOOGLE_ANALYTICS": "",
     "NODE_ENV": "production"
   },

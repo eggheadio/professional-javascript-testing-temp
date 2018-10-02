@@ -8,7 +8,7 @@ class LessonsPage extends React.Component {
     const { data } = this.props
     return (
       <Layout>
-        {/* {data.allBundle.edges.map(({ node }) => {
+        {data.allBundle.edges.map(({ node }) => {
           return (
             <div key={node.title}>
               <h1>{node.title}</h1>
@@ -44,13 +44,13 @@ class LessonsPage extends React.Component {
               </ul>
             </div>
           )
-        })} */}
+        })}
       </Layout>
     )
   }
 }
 
-/* export const query = graphql`
+export const query = graphql`
   query LessonsPageQuery {
     allBundle {
       edges {
@@ -65,6 +65,6 @@ class LessonsPage extends React.Component {
       }
     }
   }
-` */
+`
 
 export default LessonsPage
