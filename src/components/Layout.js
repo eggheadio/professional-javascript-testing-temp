@@ -26,6 +26,7 @@ const Layout = ({ children, darkHeader }) => (
           ]}
         >
           <html lang="en" />
+          <script type="text/javascript" src="//fast.fonts.net/jsapi/bf9975aa-1bcc-4052-8d47-2bc727a70fea.js"></script>
         </Helmet>
         <Header
           siteTitle={data.site.siteMetadata.title}
