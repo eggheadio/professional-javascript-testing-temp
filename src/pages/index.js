@@ -56,11 +56,12 @@ class IndexPage extends React.Component {
   }
 
   render() {
+    console.log('props: ', this.props)
     // const packages = this.props.data.allBundle.edges
 
     return (
       <UserContext.Provider value={this.state}>
-        <Layout>
+        <Layout darkHeader>
           <Hero />
           <main
             className={css({
