@@ -1,6 +1,9 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import {css} from 'emotion'
 import StripeCheckout from 'react-stripe-checkout'
+
+import colorValues from '../lib/colorValues'
 
 const Checkout = ({
   name,
@@ -31,7 +34,21 @@ const Checkout = ({
     closed={onClosed}
     triggerEvent="onClick"
   >
-    <button>
+    <button className={css({
+      border: 'none',
+      fontFamily: 'TT Commons W01 Regular',
+      fontWeight: 400,
+      fontSize: '20px',
+      lineHeight: 1.25,
+      color: colorValues['white'],
+      background: colorValues['base-orange'],
+      borderRadius: '4px',
+      width: '100%',
+      display: 'flex',
+      alignItems: 'center',
+      justifyContent: 'center',
+      padding: '15px 20px',
+    })}>
       Start Learning
     </button>
   </StripeCheckout>
