@@ -195,36 +195,6 @@ class Package extends React.Component {
             </ul>
           </div>
         }
-
-
-
-        {/* <div
-          className={css({
-            border: '1px solid #e4e4e4'
-          })}
-        >
-          <div
-            className={css({
-              padding: '60px 20px',
-              display: 'flex',
-              justifyContent: 'center'
-            })}
-          >
-            <ul
-              className={css({
-                listStyle: 'none'
-              })}
-            >
-              <li
-                className={css({
-                  ':before': {
-                    content: '"\\2714"'
-                  }
-                })}
-              />
-            </ul>
-          </div>
-        </div> */}
       </div>
     )
   }
