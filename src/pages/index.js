@@ -132,7 +132,12 @@ class IndexPage extends React.Component {
                               className={css({
                                 width: '50%',
                                 flexShrink: 0,
-                                paddingRight: '20px'
+                                ':nth-child(odd)': {
+                                  paddingRight: '20px'
+                                },
+                                ':nth-child(even)': {
+                                  paddingLeft: '20px'
+                                }
                               })}
                             >
                               <Package
