@@ -113,7 +113,8 @@ class Announcement extends React.Component {
                     <Field type="email" name="email" placeholder="enter e-mail"
                       className={css({
                       border: '0',
-                      background: '#F4F6F8',
+                      color: '#FFFFFF',
+                      backgroundColor: '#4D4D56',
                       width: '300px',
                       height: '60px',
                       display: 'flex',
@@ -127,7 +128,9 @@ class Announcement extends React.Component {
                       '&:focus': {
                         outline: 'transparent',
                         filter: 'contrast(0.95)',
-                        color: 'black',
+                        color: '#FFFFFF',
+                        fontWeight: '500',
+                        fontSize: '18px',
                         transition: 'all 600ms cubic-bezier(0.075, 0.82, 0.165, 1)',
                       },
                       '&::placeholder': {
@@ -151,8 +154,8 @@ class Announcement extends React.Component {
                       width: '130px',
                       margin: '0',
                       textDecoration: 'none',
-                      background: 'black',
-                      color: 'white',
+                      backgroundColor: '#FFD473',
+                      color: 'black',
                       'span': {
                         transition: 'all 250ms ease',
                       },
@@ -167,7 +170,14 @@ class Announcement extends React.Component {
                       Notify Me
                     </button>
                   </div>
-                  <p>No spam. Only bacon.</p>
+                  <p className={css({
+                    height: '30px',
+                    width: '570px',
+                    opacity: '0.9',
+                    color: '#F2F2F2',
+                    fontSize: '16px',
+                    lineHeight: '30px',
+                  })}>No spam. Only bacon.</p>
                 </Form>
               )
             }}
